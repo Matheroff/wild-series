@@ -2,6 +2,14 @@ const express = require("express");
 
 const router = express.Router();
 
+const { sayWelcome } = require("../../controllers/sayActions");
+
+  router.get("/", sayWelcome);
+
+const { browse } = require("../../controllers/programActions");
+
+  router.use("/programs", browse);
+
 /* ************************************************************************* */
 // Import And Use Routers Here
 /* ************************************************************************* */
