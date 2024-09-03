@@ -20,9 +20,3 @@ app
   .on("error", (err) => {
     console.error("Error:", err.message);
   });
-
-  
-// Ajout de la route pour gérer les requêtes GET à la racine
-app.get('/', (req, res) => {
-  res.send('Welcome to Wild Series !');
-});
