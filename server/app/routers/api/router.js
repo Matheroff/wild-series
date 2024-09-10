@@ -11,16 +11,16 @@ router.get("/", sayWelcome);
 /* ************************************************************************* */
 
 /* Add these *************************************************************** */
-const categoriesRouter = require("./categories/router");
+const categoriesRouter = require("./categories/categoryRouter");
 
 router.use("/categories", categoriesRouter);
 /* ************************************************************************* */
 
-const programsRouter = require("./programs/router");
+const programsRouter = require("./programs/programsRouter");
 
 router.use("/programs", programsRouter);
 
-const itemsRouter = require("./items/router");
+const itemsRouter = require("./items/itemsRouter");
 
 router.use("/items", itemsRouter);
 

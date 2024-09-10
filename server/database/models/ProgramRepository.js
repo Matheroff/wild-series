@@ -1,10 +1,10 @@
 const AbstractRepository = require("./AbstractRepository");
 
-class CategoryRepository extends AbstractRepository {
+class ProgramRepository extends AbstractRepository {
   constructor() {
     // Call the constructor of the parent class (AbstractRepository)
     // and pass the table name "category" as configuration
-    super({ table: "category" });
+    super({ table: "program" });
   }
 
   async readAll() {
@@ -16,4 +16,4 @@ class CategoryRepository extends AbstractRepository {
   }
 }
 
-module.exports = CategoryRepository;
+module.exports = ProgramRepository;

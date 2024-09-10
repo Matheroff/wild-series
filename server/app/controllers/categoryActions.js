@@ -1,3 +1,5 @@
+const tables = require("../../database/tables");
+
 // Some data to make the trick
 
 const categories = [
@@ -13,25 +15,19 @@ const categories = [
   
   // Declare the actions
   
-  const browse = (req, res) => {
-    if (req.query.q !=null) {
-      const filteredCategories = categories.filter((categorie) =>
-      categorie.synopsis.includes(req.query.q)
-      );
+  const browse = async (req, res) => {
+      const categoriesFromDB = await tables.category.readAll();
     
-      res.json(filteredCategories);
-    } else {
-      res.json(categories);
-    }
-  };
+      res.json(categoriesFromDB);
+    };
 
   const read = (req, res) => {
     const parseId = parseInt(req.params.id, 10);
   
-    const categorie = categories.find((p) => p.id === parseId);
+    const category = categories.find((p) => p.id === parseId);
   
-    if (categorie != null) {
-      res.json(categorie);
+    if (category != null) {
+      res.json(category);
     } else {
       res.sendStatus(404);
     }

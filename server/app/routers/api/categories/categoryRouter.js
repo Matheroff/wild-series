@@ -1,19 +1,19 @@
 const express = require("express");
 
-const router = express.Router();
+const categoryRouter = express.Router();
 
 /* ************************************************************************* */
 // Define Your API Routes Here
 /* ************************************************************************* */
 
 // Import item-related actions
-const { browse, read } = require("../../../controllers/programActions");
+const { browse, read } = require("../../../controllers/categoryActions");
 
 // Route to get a list of programs
-router.get("/", browse);
+categoryRouter.get("/", browse);
 
-router.get("/:id", read); // Complete path is: /api/programs/:id
+categoryRouter.get("/:id", read); // Complete path is: /api/categories/:id
 
 /* ************************************************************************* */
 
-module.exports = router;
+module.exports = categoryRouter;
